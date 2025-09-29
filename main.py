@@ -1,16 +1,36 @@
-# This is a sample Python script.
+# --------------------- ENTRY POINT TO THE PITCH MASTER SCRIPT ----------------------
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def say_hello(name, age):
+    print("Hello, " + name + "! Your age is " + age + ".")
 
+my_name = input("What is your name? ")
+my_age = input("How old are you? ")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+say_hello(my_name, my_age)
 
+class Dog:
+    def __init__(self, name, breed, age):
+        self.name = name
+        self.breed = breed
+        self.age = age
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    def bark(self, is_loud):
+        if is_loud:
+            print("bark!!")
+        else:
+            print("woof!")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    def get_older(self):
+        self.age += 1
+
+connors_dog = Dog("Freddy", "Golden Retriever", 4)
+
+print(connors_dog.age)
+connors_dog.bark(True)
+connors_dog.get_older()
+
+seths_dog = Dog("Seth", "Bobby", 8)
+
+print(seths_dog.breed)
+seths_dog.get_older()
+print(seths_dog.age)
