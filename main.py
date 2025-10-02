@@ -1,30 +1,29 @@
 # Imports here
 
+from motor_control import *
 
 # --------------------- ENTRY POINT TO THE PITCH MASTER SCRIPT ----------------------
 
-# Strickly using console commands
-print("Welcome to the Pitch-Master Control Panel!")
-print("1 = Sine")
-print("2 = Square")
-print("3 = Triangle")
-selected_waveform = input("Type the number corresponding to the waveform you desire: ")
+# Strictly using console commands
 
-match selected_waveform:
-    case "1":
-        print("Sinusiodal Waveform selected!")
-    case "2":
-        print("Square Waveform selected!")
-    case "3":
-        print("Triangle Waveform selected!")
+selected_waveform, operating_speed, ramp_time = command_speed()
 
-operating_speed = input("Type the operating speed you desire (Hz): ")
-ramp_time = input("Type the time required to achieve full speed (seconds): ")
+while True:
+    command = input("\nType the command you would like to execute: ")
+    match command:
+        case "help":
+            print('''Here are a list of the commands: 
 
-
-#def help ():
-    #print("")
-
+command = commands the motor how to operate            
+start = runs the motor start up sequence
+stop = runs the motor stop sequence
+exit = exits the program''')
+        case "command":
+            command_speed()
+        case "start":
+            start_sequence(operating_speed, ramp_time)
+        case "exit":
+            break
 
 
 
